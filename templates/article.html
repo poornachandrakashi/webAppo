@@ -1,0 +1,15 @@
+{% extends 'layout.html' %} {% block body %}
+{% for articl in article %}
+<h1>{{articl.title}}</h1>
+<small>Written by {{articl.author}} on {{articl.create_date}}</small>
+<hr>
+
+
+<div>
+    {{articl.body | safe}}
+</div>
+<div>
+    <img src="static/images/articles/{{articl.image_name}}" alt="" />
+</div>
+{% endfor %}
+{% endblock %}
